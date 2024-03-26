@@ -1,0 +1,9 @@
+name = "onepass"
+account_id = ""
+workers_dev = true
+compatibility_date = "2023-03-07"
+
+[vars]
+ALLOWED_HOSTNAMES = [
+  ""
+]
