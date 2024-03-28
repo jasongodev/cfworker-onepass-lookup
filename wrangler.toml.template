@@ -1,9 +1,31 @@
 name = "onepass"
-account_id = ""
-workers_dev = true
 compatibility_date = "2023-03-07"
+main = "src/index.ts"
+
+account_id = ""
+
+workers_dev = true
+
+[env.dev]
+workers_dev = true
+
+[env.staging]
+workers_dev = true
 
 [vars]
-ALLOWED_HOSTNAMES = [
+ENVIRONMENT = "production"
+TURNSTILE_ALLOWED_HOSTNAMES = [
+  ""
+]
+
+[env.dev.vars]
+ENVIRONMENT = "dev"
+TURNSTILE_ALLOWED_HOSTNAMES = [
+  ""
+]
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+TURNSTILE_ALLOWED_HOSTNAMES = [
   ""
 ]

@@ -2,11 +2,46 @@
   "name": "onepass-lookup-cfworker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:wrangler": "wrangler dev --env dev --port 8787",
+    "dev:localtunnel": "lt --port 8787",
+    "dev": "run-p dev:wrangler dev:localtunnel",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy"
   },
   "keywords": [],
   "author": "Jason Go",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "hono": "^4.1.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240320.1",
+    "localtunnel": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "ts-standard": "^12.0.2",
+    "wrangler": "^3.38.0"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "embeddedLanguageFormatting": "auto",
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false,
+    "vueIndentScriptAndStyle": false
+  }
 }

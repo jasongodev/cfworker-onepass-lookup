@@ -4,6 +4,7 @@ dist
 dist-ssr
 *.local
 worker
+.wrangler
 
 # Logs
 logs
